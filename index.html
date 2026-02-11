@@ -32,7 +32,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;family=Sora:wght@600;700;800&amp;display=swap"
     rel="stylesheet"
   >
   <link rel="stylesheet" href="css/main.css">
@@ -77,6 +77,9 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="scroll-progress" aria-hidden="true">
+    <span id="scroll-progress-bar"></span>
+  </div>
 
   <header class="site-header" id="top">
     <div class="container nav-wrap">
@@ -111,24 +114,40 @@
           <p class="hero-subheadline reveal">
             UXCode designs, builds, and scales production-ready AI and software platforms so your team can launch faster, automate critical workflows, and outperform in competitive markets.
           </p>
+          <div class="hero-proof reveal">
+            <span>Enterprise-grade delivery</span>
+            <span>Security-aware AI implementation</span>
+            <span>Fast technical execution</span>
+          </div>
           <div class="hero-actions reveal">
             <a class="btn btn-primary" href="#contact">Get Started</a>
             <a class="btn btn-secondary" href="#results">View Our Work</a>
           </div>
           <ul class="trust-stats reveal" aria-label="Company statistics">
             <li>
-              <strong>50+</strong>
+              <strong class="count-up" data-count="50" data-suffix="+">50+</strong>
               <span>Projects Delivered</span>
             </li>
             <li>
-              <strong>15 Years</strong>
+              <strong class="count-up" data-count="15" data-suffix=" Years">15 Years</strong>
               <span>Combined Senior Experience</span>
             </li>
             <li>
-              <strong>98%</strong>
+              <strong class="count-up" data-count="98" data-suffix="%">98%</strong>
               <span>Client Satisfaction Rate</span>
             </li>
           </ul>
+          <div class="hero-partners reveal" aria-label="Industries we support">
+            <span class="partners-label">Trusted in:</span>
+            <ul class="partner-track">
+              <li>FinTech</li>
+              <li>Healthcare</li>
+              <li>Enterprise SaaS</li>
+              <li>Retail Tech</li>
+              <li>Logistics</li>
+              <li>Operations</li>
+            </ul>
+          </div>
         </div>
 
         <div class="hero-visual reveal" aria-hidden="true">
@@ -141,6 +160,16 @@
             <div class="beam beam-a"></div>
             <div class="beam beam-b"></div>
             <div class="beam beam-c"></div>
+            <div class="data-stream stream-a"></div>
+            <div class="data-stream stream-b"></div>
+            <div class="status-card status-a">
+              <span>Pipeline Health</span>
+              <strong>Green</strong>
+            </div>
+            <div class="status-card status-b">
+              <span>Deploy Velocity</span>
+              <strong>+26%</strong>
+            </div>
             <div class="signal-chip">
               <span>AI Signal</span>
               <strong>96.4% confidence</strong>
@@ -159,13 +188,14 @@
         </div>
 
         <div class="services-grid">
-          <article class="service-card reveal">
+          <article class="service-card reveal tilt-card">
             <div class="service-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                 <path d="M12 2 3 7v10l9 5 9-5V7zm0 2.2 6.8 3.8L12 11.8 5.2 8zM5 9.7l6 3.3v6.3l-6-3.3zm8 9.6V13l6-3.3V16z"></path>
               </svg>
             </div>
             <h3>AI Solutions</h3>
+            <p class="service-tag">Outcome Focus: Automation and Decision Quality</p>
             <p>We build practical AI systems that solve real workflow and decision-making problems. Every model is designed around business impact, not novelty.</p>
             <ul>
               <li>LLM-powered assistants and copilots</li>
@@ -175,13 +205,14 @@
             </ul>
           </article>
 
-          <article class="service-card reveal">
+          <article class="service-card reveal tilt-card">
             <div class="service-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                 <path d="M4 4h16v5H4zm0 7h7v9H4zm9 0h7v3h-7zm0 5h7v4h-7z"></path>
               </svg>
             </div>
             <h3>Technical Development</h3>
+            <p class="service-tag">Outcome Focus: Speed, Reliability, Scale</p>
             <p>Our engineering team delivers reliable, high-performance products with clean architecture and modern development practices.</p>
             <ul>
               <li>Web and platform engineering</li>
@@ -191,13 +222,14 @@
             </ul>
           </article>
 
-          <article class="service-card reveal">
+          <article class="service-card reveal tilt-card">
             <div class="service-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                 <path d="M3 20V6h4v14zm6 0V10h4v10zm6 0V4h4v16z"></path>
               </svg>
             </div>
             <h3>Digital Transformation</h3>
+            <p class="service-tag">Outcome Focus: Modern Operations</p>
             <p>We modernize legacy processes and tools into scalable digital systems that support future growth and better customer experiences.</p>
             <ul>
               <li>Legacy system modernization</li>
@@ -207,13 +239,14 @@
             </ul>
           </article>
 
-          <article class="service-card reveal">
+          <article class="service-card reveal tilt-card">
             <div class="service-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                 <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2m1 17.9V18h-2v1.9A8 8 0 0 1 4.1 13H6v-2H4.1A8 8 0 0 1 11 4.1V6h2V4.1A8 8 0 0 1 19.9 11H18v2h1.9A8 8 0 0 1 13 19.9M12 8a4 4 0 1 0 4 4 4 4 0 0 0-4-4"></path>
               </svg>
             </div>
             <h3>Consulting &amp; Strategy</h3>
+            <p class="service-tag">Outcome Focus: Clear Execution Roadmaps</p>
             <p>We align technical investment with business objectives, giving leadership teams clear roadmaps, realistic timelines, and confident execution paths.</p>
             <ul>
               <li>AI readiness assessments</li>
@@ -235,27 +268,27 @@
         </div>
 
         <div class="why-grid">
-          <article class="why-card reveal">
+          <article class="why-card reveal tilt-card">
             <h3>Senior-Level Expertise</h3>
             <p>Every engagement is led by senior strategists and engineers with deep experience in production AI and scalable systems.</p>
           </article>
-          <article class="why-card reveal">
+          <article class="why-card reveal tilt-card">
             <h3>Proven Business Outcomes</h3>
             <p>Our work is measured against meaningful KPIs like conversion lift, reduced cycle time, and operational efficiency.</p>
           </article>
-          <article class="why-card reveal">
+          <article class="why-card reveal tilt-card">
             <h3>Client-Centric Collaboration</h3>
             <p>We integrate with your team, communicate clearly, and adapt to your internal workflows without introducing unnecessary overhead.</p>
           </article>
-          <article class="why-card reveal">
+          <article class="why-card reveal tilt-card">
             <h3>Modern Technical Stack</h3>
             <p>We use dependable, current frameworks and cloud practices to ensure long-term maintainability and adaptability.</p>
           </article>
-          <article class="why-card reveal">
+          <article class="why-card reveal tilt-card">
             <h3>End-to-End Delivery</h3>
             <p>From discovery to post-launch iteration, we own the full lifecycle and keep momentum high across every project phase.</p>
           </article>
-          <article class="why-card reveal">
+          <article class="why-card reveal tilt-card">
             <h3>Scalable Architecture</h3>
             <p>Solutions are built to grow with demand, enabling your business to expand without rebuilding core systems later.</p>
           </article>
@@ -272,27 +305,27 @@
         </div>
 
         <ol class="process-flow">
-          <li class="process-step reveal">
+          <li class="process-step reveal tilt-card">
             <span class="step-number">1</span>
             <h3>Discovery</h3>
             <p>We map business goals, technical constraints, and opportunity areas to define scope and priorities.</p>
           </li>
-          <li class="process-step reveal">
+          <li class="process-step reveal tilt-card">
             <span class="step-number">2</span>
             <h3>Strategy</h3>
             <p>We create a practical roadmap with architecture, delivery cadence, and measurable success metrics.</p>
           </li>
-          <li class="process-step reveal">
+          <li class="process-step reveal tilt-card">
             <span class="step-number">3</span>
             <h3>Development</h3>
             <p>Our team builds iteratively with quality gates, code reviews, and transparent progress updates.</p>
           </li>
-          <li class="process-step reveal">
+          <li class="process-step reveal tilt-card">
             <span class="step-number">4</span>
             <h3>Launch</h3>
             <p>We deploy with controlled rollout plans, testing protocols, and monitoring to ensure a stable go-live.</p>
           </li>
-          <li class="process-step reveal">
+          <li class="process-step reveal tilt-card">
             <span class="step-number">5</span>
             <h3>Support</h3>
             <p>After launch, we optimize performance, expand capabilities, and provide ongoing technical guidance.</p>
@@ -310,7 +343,7 @@
         </div>
 
         <div class="results-grid">
-          <article class="result-card reveal">
+          <article class="result-card reveal tilt-card">
             <h3>FinTech Workflow Automation</h3>
             <p class="result-industry">Industry: Financial Services</p>
             <p>Challenge: Manual underwriting workflows slowed approvals and increased compliance risk.</p>
@@ -318,7 +351,7 @@
             <p class="result-metric">Result: <strong>42% faster approvals</strong> and <strong>31% lower manual effort</strong>.</p>
           </article>
 
-          <article class="result-card reveal">
+          <article class="result-card reveal tilt-card">
             <h3>SaaS Retention Intelligence</h3>
             <p class="result-industry">Industry: B2B Software</p>
             <p>Challenge: Customer churn risk was identified too late to intervene effectively.</p>
@@ -326,7 +359,7 @@
             <p class="result-metric">Result: <strong>18% churn reduction</strong> in 2 quarters.</p>
           </article>
 
-          <article class="result-card reveal">
+          <article class="result-card reveal tilt-card">
             <h3>Omnichannel Commerce Platform</h3>
             <p class="result-industry">Industry: Retail and eCommerce</p>
             <p>Challenge: Legacy systems could not support demand spikes across channels.</p>
@@ -345,7 +378,7 @@
         </div>
 
         <div class="stack-grid">
-          <article class="stack-card reveal">
+          <article class="stack-card reveal tilt-card">
             <h3>AI &amp; ML</h3>
             <ul>
               <li>OpenAI API</li>
@@ -354,7 +387,7 @@
               <li>LangChain</li>
             </ul>
           </article>
-          <article class="stack-card reveal">
+          <article class="stack-card reveal tilt-card">
             <h3>Frontend</h3>
             <ul>
               <li>React</li>
@@ -363,7 +396,7 @@
               <li>Tailwind CSS</li>
             </ul>
           </article>
-          <article class="stack-card reveal">
+          <article class="stack-card reveal tilt-card">
             <h3>Backend</h3>
             <ul>
               <li>Node.js</li>
@@ -372,7 +405,7 @@
               <li>PostgreSQL</li>
             </ul>
           </article>
-          <article class="stack-card reveal">
+          <article class="stack-card reveal tilt-card">
             <h3>Cloud</h3>
             <ul>
               <li>AWS</li>
